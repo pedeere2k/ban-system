@@ -1,60 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>banSystem - Painel</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>banSystem - Painel</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="box">
-    <header>
-      <h1>PAINEL BAN</h1>
-      <div class="header-btns">
-        <button class="btn-secondary">📞 DADOS FAKE</button>
-        <button class="btn-secondary">📞 CANAL</button>
-      </div>
-    </header>
+  <div class="box">
+    <header>
+      <h1>PAINEL BAN</h1>
+      <div class="header-btns">
+        <button class="btn-secondary">📞 DADOS FAKE</button>
+        <button class="btn-secondary">📞 CANAL</button>
+      </div>
+    </header>
 
-    <section class="ban-box">
-      <h2>BAN WHATSAPP</h2>
-      <input type="text" placeholder="+55 número" />
-      <div class="btn-group">
-        <button class="btn-danger" onclick="banir()">🚫 BANIR</button>
-        <button class="btn-secondary">⋯ OPÇÕES</button>
-      </div>
-    </section>
+    <section class="ban-box">
+      <h2>BAN WHATSAPP</h2>
+      <input type="text" placeholder="+55 número" />
+      <div class="btn-group">
+        <button class="btn-danger" onclick="banir()">🚫 BANIR</button>
+        <button class="btn-secondary" onclick="toggleMenu()">⋯ OPÇÕES</button>
+      </div>
 
-    <section class="invadir-box">
-      <h2>INVADIR WHATSAPP</h2>
-      <input type="text" placeholder="+55 número alvo" />
-      <input type="email" placeholder="GMAIL" />
-      <p class="info-text">
-        > ✉️ Para iniciar, digite o número desejado e seu e-mail do Gmail.
+      <!-- Menu de opções oculto -->
+      <div id="opcoesMenu" style="display: none; margin-top: 10px;">
+        <button onclick="abrirSuporte()">💬 Suporte</button>
+        <button onclick="comprarVitalicio()">💎 Comprar Vitalício</button>
+      </div>
+    </section>
+
+    <section class="invadir-box">
+      <h2>INVADIR WHATSAPP</h2>
+      <input type="text" placeholder="+55 número alvo" />
+      <input type="email" placeholder="GMAIL" />
+      <p class="info-text">
+        > ✉️ Para iniciar, digite o número desejado e seu e-mail do Gmail.
 Após solicitar o envio do código via chamada, clique em “Invadir”.
 O sistema identificará o código de verificação na caixa postal do número inserido e o encaminhará automaticamente para o seu e-mail no formato (000-000).
-      </p>
-      <button class="btn-invadir">🛡️ INVADIR</button>
-    </section>
+      </p>
+      <button class="btn-invadir">🛡️ INVADIR</button>
+    </section>
 
-    <section class="avisos">
-<h3>🔒 Pagamento (CHECKOUT)</h3>
-<p>1. O pagamento é indispensável para que o procedimento de banimento seja iniciado.</p>
-<p>2. Durante o checkout, você deverá preencher apenas as informações necessárias para a geração da chave PIX. Nenhum dado sensível ou pessoal é exigido.</p>
-<p>3. Todo o processo é 100% automático, sigiloso e sem qualquer tipo de exposição. Sua identidade permanece totalmente protegida.</p>
-    </section>
+    <section class="avisos">
+      <h3>🔒 Pagamento (CHECKOUT)</h3>
+      <p>1. O pagamento é indispensável para que o procedimento de banimento seja iniciado.</p>
+      <p>2. Durante o checkout, você deverá preencher apenas as informações necessárias para a geração da chave PIX. Nenhum dado sensível ou pessoal é exigido.</p>
+      <p>3. Todo o processo é 100% automático, sigiloso e sem qualquer tipo de exposição. Sua identidade permanece totalmente protegida.</p>
+    </section>
 
-    <section class="comunicado">
-      <p><strong>Comunicado!</strong><br>Você declara estar ciente de que não nos responsabilizamos pelo uso indevido.</p>
-      <p><strong style="color: orange;">Comunicado 2!</strong><br>O banimento ocorre entre 4 e 6 minutos após o pagamento.</p>
-      <p><strong style="color: green;">Comunicado 3!</strong><br>O banimento é anônimo e sem contato com o alvo.</p>
-    </section>
-  </div>
-  <script>
-    function banir() {
-      window.location.href = "pagamento.html";
-    }
-  </script>
+    <section class="comunicado">
+      <p><strong>Comunicado!</strong><br>Você declara estar ciente de que não nos responsabilizamos pelo uso indevido.</p>
+      <p><strong style="color: orange;">Comunicado 2!</strong><br>O banimento ocorre entre 4 e 6 minutos após o pagamento.</p>
+      <p><strong style="color: green;">Comunicado 3!</strong><br>O banimento é anônimo e sem contato com o alvo.</p>
+    </section>
+  </div>
+
+  <script>
+    function banir() {
+      window.location.href = "pagamento.html";
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById('opcoesMenu');
+      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function abrirSuporte() {
+      window.open("https://wa.me/555192610121", "_blank"); // substitua pelo seu número
+    }
+
+    function comprarVitalicio() {
+      window.location.href = "vitalicio.html"; // substitua pelo link real
+    }
+  </script>
 </body>
 </html>
