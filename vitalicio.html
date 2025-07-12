@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plano Vitalício</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      border: 2px solid red;
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 450px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: red;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: bold;
+      color: red;
+      margin-bottom: 30px;
+    }
+
+    .btn-pagamento {
+      background-color: red;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-pagamento:hover {
+      background-color: darkred;
+      transform: scale(1.05);
+    }
+
+    .aviso {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💎 Plano Vitalício</h1>
+    <p>Garanta acesso ilimitado ao nosso sistema de banimento e funções premium!</p>
+    <div class="price">R$ 49,90 - pagamento único</div>
+    <button class="btn-pagamento" onclick="iniciarPagamento()">💰 PAGAR COM PIX</button>
+
+    <div class="aviso">
+      Após o pagamento, envie o comprovante para nosso suporte no WhatsApp.<br>
+      Ativação em até 5 minutos.
+    </div>
+  </div>
+
+  <script>
+    function iniciarPagamento() {
+      window.location.href = "https://pagamento.exemplo.com/pix"; // Substitua pela URL real
+    }
+  </script>
+</body>
+</html>
