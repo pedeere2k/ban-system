@@ -1,34 +1,35 @@
 body {
   margin: 0;
   padding: 0;
-  background: #12011f;
+  background: #ffffff;
   font-family: 'Segoe UI', sans-serif;
-  color: #ffffff;
+  color: #333;
 }
 
 .box, .pagamento {
   max-width: 600px;
   margin: 20px auto;
-  background: #1f0a2e;
+  background: #ffffff;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255, 0, 153, 0.2);
+  border: 2px solid #aa00ff;
+  box-shadow: 0 0 10px rgba(170, 0, 255, 0.1);
 }
 
 h1, h2, h3 {
   text-align: center;
-  color: #ff8ae2;
+  color: #aa00ff;
 }
 
 input {
   width: 100%;
   padding: 10px;
   margin: 5px 0 15px;
-  border: none;
+  border: 2px solid #aa00ff;
   border-radius: 8px;
   font-size: 16px;
-  background: #2b1245;
-  color: #fff;
+  background: #fff;
+  color: #333;
 }
 
 .btn-danger {
@@ -38,48 +39,55 @@ input {
   border: none;
   border-radius: 8px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .btn-secondary {
-  background: transparent;
-  border: 2px solid #ff8ae2;
-  color: #ff8ae2;
+  background: #fff;
+  border: 2px solid #aa00ff;
+  color: #aa00ff;
   padding: 12px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .btn-invadir {
-  background: #d94cff;
+  background: #aa00ff;
   color: #fff;
   border: none;
   padding: 12px;
   width: 100%;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .btn-pagar {
-  background: #c934b3;
+  background: #aa00ff;
   border: none;
   color: white;
   padding: 15px;
   width: 100%;
   border-radius: 10px;
   font-size: 18px;
+  cursor: pointer;
 }
 
 .avisos, .comunicado {
-  background: #2e1144;
+  background: #f9f1ff;
   padding: 15px;
   border-radius: 10px;
+  border-left: 4px solid #aa00ff;
   margin-top: 20px;
+  color: #444;
 }
 
 .pix-box {
-  background: #351244;
+  background: #f5e9ff;
   padding: 20px;
   margin-top: 20px;
   border-radius: 12px;
-  color: #fff;
+  border: 2px dashed #aa00ff;
+  color: #333;
 }
 
 code {
@@ -90,18 +98,21 @@ code {
   margin: 10px 0;
   border-radius: 8px;
   font-weight: bold;
+  border: 1px solid #aa00ff;
 }
 
 .garantias p {
-  background: #260033;
+  background: #f0f0ff;
   padding: 10px;
   margin: 8px 0;
   border-radius: 6px;
+  border-left: 4px solid #aa00ff;
+  color: #333;
 }
 
 footer {
   margin-top: 30px;
   text-align: center;
   font-size: 14px;
-  color: #bbb;
+  color: #888;
 }
