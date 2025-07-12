@@ -14,7 +14,7 @@ app.get('/confirmar', async (req, res) => {
     service: 'gmail',
     auth: {
       user: 'tuntungtungsahuur@gmail.com',
-      pass: 'SUA_SENHA_AQUI' // Substitua pela senha de app do Gmail
+      pass: 'DIBALAKA' // Substitua pela senha de app do Gmail
     }
   });
 
