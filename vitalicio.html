@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plano Vitalício</title>
+  <title>Plano Vitalício - Pagamento</title>
   <style>
     * {
       margin: 0;
@@ -24,10 +24,11 @@
     .container {
       border: 2px solid red;
       border-radius: 15px;
-      padding: 40px;
-      max-width: 450px;
+      padding: 30px;
+      max-width: 480px;
+      width: 100%;
       text-align: center;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
     }
 
     h1 {
@@ -40,17 +41,14 @@
       margin-bottom: 20px;
     }
 
-    .price {
-      font-size: 28px;
-      font-weight: bold;
-      color: red;
-      margin-bottom: 30px;
+    .qrcode {
+      margin: 20px 0;
     }
 
-    .btn-pagamento {
+    .btn-copiar {
       background-color: red;
       color: white;
-      padding: 12px 30px;
+      padding: 12px 25px;
       border: none;
       border-radius: 25px;
       font-size: 16px;
@@ -58,34 +56,41 @@
       transition: all 0.3s ease;
     }
 
-    .btn-pagamento:hover {
+    .btn-copiar:hover {
       background-color: darkred;
       transform: scale(1.05);
     }
 
     .aviso {
-      margin-top: 30px;
+      margin-top: 25px;
       font-size: 14px;
-      color: #888;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>💎 Plano Vitalício</h1>
-    <p>Garanta acesso ilimitado ao nosso sistema de banimento e funções premium!</p>
-    <div class="price">R$ 49,90 - pagamento único</div>
-    <button class="btn-pagamento" onclick="iniciarPagamento()">💰 PAGAR COM PIX</button>
+    <p>Realize o pagamento de <strong>R$ 40,00</strong> via Pix para ativar seu plano.</p>
+
+    <div class="qrcode">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020126580014BR.GOV.BCB.PIX013671507bca-e2ec-41c6-8335-b0cf6bf6ea10520400005303986540540.005802BR5925Pedro%20Henrique%20Duarte%20San6009SAO%20PAULO62140510KFmq5h4T1W63046DE9" alt="QR Code Pix">
+    </div>
+
+    <button class="btn-copiar" onclick="copiarPix()">📋 Copiar Código Pix</button>
 
     <div class="aviso">
-      Após o pagamento, envie o comprovante para nosso suporte no WhatsApp.<br>
+      Após o pagamento, envie o comprovante para o suporte no WhatsApp.<br>
       Ativação em até 5 minutos.
     </div>
   </div>
 
   <script>
-    function iniciarPagamento() {
-      window.location.href = "https://pagamento.exemplo.com/pix"; // Substitua pela URL real
+    function copiarPix() {
+      const codigoPix = `00020126580014BR.GOV.BCB.PIX013671507bca-e2ec-41c6-8335-b0cf6bf6ea10520400005303986540540.005802BR5925Pedro Henrique Duarte San6009SAO PAULO62140510KFmq5h4T1W63046DE9`;
+      navigator.clipboard.writeText(codigoPix).then(() => {
+        alert("✅ Código Pix copiado com sucesso!\nAgora cole no app do banco para realizar o pagamento.");
+      });
     }
   </script>
 </body>
