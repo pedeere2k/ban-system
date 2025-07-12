@@ -1,22 +1,25 @@
-
 body {
   margin: 0;
   padding: 0;
-  background: #1a001f;
+  background: #12011f;
   font-family: 'Segoe UI', sans-serif;
-  color: #fff;
+  color: #ffffff;
 }
+
 .box, .pagamento {
   max-width: 600px;
   margin: 20px auto;
-  background: #2e003f;
+  background: #1f0a2e;
   padding: 20px;
   border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 0, 153, 0.2);
 }
+
 h1, h2, h3 {
   text-align: center;
-  color: #ffb3ff;
+  color: #ff8ae2;
 }
+
 input {
   width: 100%;
   padding: 10px;
@@ -24,32 +27,38 @@ input {
   border: none;
   border-radius: 8px;
   font-size: 16px;
+  background: #2b1245;
+  color: #fff;
 }
+
 .btn-danger {
-  background: #ff4d4d;
+  background: #ff3b7d;
   color: white;
   padding: 12px;
   border: none;
   border-radius: 8px;
   margin-right: 10px;
 }
+
 .btn-secondary {
   background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
+  border: 2px solid #ff8ae2;
+  color: #ff8ae2;
   padding: 12px;
   border-radius: 8px;
 }
+
 .btn-invadir {
-  background: #cc00ff;
+  background: #d94cff;
   color: #fff;
   border: none;
   padding: 12px;
   width: 100%;
   border-radius: 8px;
 }
+
 .btn-pagar {
-  background: #aa00ff;
+  background: #c934b3;
   border: none;
   color: white;
   padding: 15px;
@@ -57,19 +66,22 @@ input {
   border-radius: 10px;
   font-size: 18px;
 }
+
 .avisos, .comunicado {
-  background: #37004c;
+  background: #2e1144;
   padding: 15px;
   border-radius: 10px;
   margin-top: 20px;
 }
+
 .pix-box {
-  background: #330040;
+  background: #351244;
   padding: 20px;
   margin-top: 20px;
   border-radius: 12px;
   color: #fff;
 }
+
 code {
   display: block;
   background: #fff;
@@ -79,15 +91,17 @@ code {
   border-radius: 8px;
   font-weight: bold;
 }
+
 .garantias p {
   background: #260033;
   padding: 10px;
   margin: 8px 0;
   border-radius: 6px;
 }
+
 footer {
   margin-top: 30px;
   text-align: center;
   font-size: 14px;
-  color: #ccc;
+  color: #bbb;
 }
