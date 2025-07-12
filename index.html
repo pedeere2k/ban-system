@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel de Banimento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📱 Banimento WhatsApp</h1>
+    <p>Insira o número que deseja banir</p>
+    <input type="text" id="numero" placeholder="Ex: 5599999999999">
+    <button onclick="banir()">Banir com Pix</button>
+  </div>
+  <script>
+    function banir() {
+      const numero = document.getElementById('numero').value;
+      if (!numero) return alert("Digite um número válido.");
+      localStorage.setItem('numeroBanido', numero);
+      window.location.href = "pagamento.html";
+    }
+  </script>
+</body>
+</html>
