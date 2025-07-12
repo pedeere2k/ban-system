@@ -5,14 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>banSystem - Painel</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilo para alinhar os botões e logo lado a lado */
+    .header-btns {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header-btns button {
+      display: flex;
+      align-items: center;
+    }
+    /* Estilo para o logo do WhatsApp */
+    .whatsapp-logo {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+    /* Modal personalizado */
+    #modalDadosFake {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #modalDadosFake .modal-content {
+      background: #fff;
+      border: 2px solid #aa00ff;
+      border-radius: 12px;
+      max-width: 400px;
+      padding: 25px;
+      position: relative;
+      box-shadow: 0 0 15px #aa00ff;
+    }
+    #modalDadosFake .modal-content h2 {
+      color: #aa00ff;
+      margin-bottom: 15px;
+    }
+    #modalDadosFake .modal-content hr {
+      border: none;
+      border-top: 1px solid #aa00ff;
+      margin: 15px 0;
+    }
+    #modalDadosFake .modal-content button.close-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      border: none;
+      background: transparent;
+      font-size: 22px;
+      cursor: pointer;
+      color: #aa00ff;
+    }
+    #modalDadosFake .modal-content p {
+      margin-bottom: 12px;
+    }
+    #modalDadosFake .modal-content em {
+      font-style: normal;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
   <div class="box">
     <header>
       <h1>PAINEL BAN</h1>
       <div class="header-btns">
-        <button class="btn-secondary">📞 DADOS FAKE</button>
+        <button class="btn-secondary" onclick="abrirModal()">📞 DADOS FAKE</button>
         <button class="btn-secondary">📞 CANAL</button>
+
+        <!-- Logo WhatsApp SVG, clicável -->
+        <a href="https://wa.me/5599999999999" target="_blank" rel="noopener" title="WhatsApp Suporte" class="whatsapp-logo" aria-label="WhatsApp Suporte">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#25D366" >
+            <path d="M380.9 97.1C339-7.8 268.5-18.3 218 25.1 175.4 62.2 167.2 108.9 168 139.5 92.6 143.5 37.1 181 18.4 241.7-5.8 322.6 25.7 392.6 61.7 427.4c5.7 5.5 14.3 10.6 24.1 12.6 14.1 3.1 27.5 0 38.8-6.6l17.8-8.7c6.5-3.2 12.8-6.6 19-10.2 29.2 11.6 60.4 11.8 87.5-5.1 49.1-29.4 76.1-91.7 64.7-157.3-2.6-15.5-8.3-29.9-16.4-42.8zM224 63C284.5 63 332 110.5 332 171c0 37-16.5 72-42.7 93.6-13 11.4-29.7 18.2-48.6 18.2-3.7 0-7.3-.3-10.9-.8-5.8-.9-11.4-3.2-16.5-6.9L153 262.8c-5.3-3.4-9.3-8.7-11.4-15-2.1-6.4-1.4-13.3 1.8-19.2l26-47.1c-4-7.7-6-16.3-6-25 0-38.6 31.4-70 70-70z"/>
+          </svg>
+        </a>
       </div>
     </header>
 
@@ -36,7 +108,7 @@
       <input type="text" placeholder="+55 número alvo" />
       <input type="email" placeholder="GMAIL" />
       <p class="info-text">
-        > ✉️ Para iniciar, digite o número desejado e seu e-mail do Gmail.
+        &gt; ✉️ Para iniciar, digite o número desejado e seu e-mail do Gmail.
 Após solicitar o envio do código via chamada, clique em “Invadir”.
 O sistema identificará o código de verificação na caixa postal do número inserido e o encaminhará automaticamente para o seu e-mail no formato (000-000).
       </p>
@@ -57,6 +129,20 @@ O sistema identificará o código de verificação na caixa postal do número in
     </section>
   </div>
 
+  <!-- Modal Dados Fake -->
+  <div id="modalDadosFake">
+    <div class="modal-content">
+      <h2>BAN WHATSAPP / DESBAN</h2>
+      <p><strong>PDR RS - Dados de pagamento pra caso não queira usar os seus na hora do pagamento</strong></p>
+      <hr>
+      <p><strong>Nome E Sobrenome</strong><br><em>"Carlos Rodrigues"</em></p>
+      <p><strong>E-Mail</strong><br><em>carlosrodriguesrx@gmail.com</em></p>
+      <p><strong>Telefone/WhatsApp</strong><br><em>31 97101-4532</em></p>
+      <p><strong>CPF</strong><br><em>463.787.038-09</em></p>
+      <button class="close-btn" onclick="fecharModal()">×</button>
+    </div>
+  </div>
+
   <script>
     function banir() {
       window.location.href = "pagamento.html";
@@ -73,6 +159,13 @@ O sistema identificará o código de verificação na caixa postal do número in
 
     function comprarVitalicio() {
       window.location.href = "vitalicio.html"; // substitua pelo link real
+    }
+
+    function abrirModal() {
+      document.getElementById('modalDadosFake').style.display = 'flex';
+    }
+    function fecharModal() {
+      document.getElementById('modalDadosFake').style.display = 'none';
     }
   </script>
 </body>
